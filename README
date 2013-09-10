@@ -1,2 +1,35 @@
-HELLO WORLD
-this is another test
+Divide y Venceras
+
+Así es como jala esto:
+
+main.c es donde está el main (duh). Ahí es donde implementamos el algoritmo.
+Se me ocurrió que puede funcionar como los problemas de la ACM. 
+Recibe todo de STDIN e imprime todo a STDOUT con una excepción los Traces. 
+Le llamo así a los rastros que va dejando el programa cuando lo estemos 
+debugueando. Esos se van a guardar en trace.log
+
+test.csh es como vamos a probar el programa. Lo que hace es:
+1.- Compila el Ejecutable main.c -> divide.o
+2.- Limpia el directorio para empezar a correr las pruebas
+3.- Corre el programa para cada archivo de prueba que está en la carpeta
+pruebas.  Cada archivo en esa carpeta se alimenta por stdin a divide.o
+el resultado de las pruebas corridas se escribe en el archivo test.log
+4.- Al final de correr todas las pruebas, compara el archivo test.log con
+    test.cmp, y el resultado de la comparación se guarda en test.dif
+
+Así que, en resumen:
+main.c    -> el codigo del programa
+test.csh  -> el script para correr las pruebas
+test.cmp  -> El resultado esperado de todas las pruebas juntas
+pruebas   -> Carpeta de archivos de prueba. Cada archivo de prueba es un
+	     stdin que se le pasa a el ejecutable.
+str.h     -> macros de manejo de strings estaticos
+trace.h   -> macros para generar tracing.
+
+Estos archivos son temporales y se destruyen y generan con cada prueba
+trace.log -> El tracing de la ultima vez que se corrieron las pruebas
+test.log  -> el stdout de la ultima vez que se corrieron las pruebas
+divide.o  -> el ejecutable
+test.dif  -> la comparacion del stdout de la ultima prueba respecto a lo esperado.
+
+
